@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 大力的小窝</title>
+  <title>PAT (Advanced Level) Practice 1002 A+B for Polynomials | 大力的小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本科大三在读">
-<meta property="og:type" content="website">
-<meta property="og:title" content="大力的小窝">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="This time, you are supposed to find A+B where A and B are two polynomials.Input Specification:Each input file contains one test case. Each case occupies 2 lines, and each line contains the information">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT (Advanced Level) Practice 1002 A+B for Polynomials">
+<meta property="og:url" content="http://yoursite.com/2021/02/05/PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials/index.html">
 <meta property="og:site_name" content="大力的小窝">
-<meta property="og:description" content="本科大三在读">
+<meta property="og:description" content="This time, you are supposed to find A+B where A and B are two polynomials.Input Specification:Each input file contains one test case. Each case occupies 2 lines, and each line contains the information">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-05T11:17:44.000Z">
+<meta property="article:modified_time" content="2021-02-05T12:26:19.525Z">
 <meta property="article:author" content="金少侠逍遥江湖">
 <meta name="twitter:card" content="summary">
   
@@ -156,113 +158,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      PAT (Advanced Level) Practice 1002 A+B for Polynomials
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/05/PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials/" class="archive-article-date">
+
+        
+        <a href="/2021/02/05/PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials/" class="archive-article-date">
   	<time datetime="2021-02-05T11:17:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/05/PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials/">PAT (Advanced Level) Practice 1002 A+B for Polynomials</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This time, you are supposed to find A+B where A and B are two polynomials.<br>Input Specification:<br>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:<br>K N​1​​ a​N​1​​​​ N​2​​ a​N​2​​​​ … N​K​​ a​N​K​​​​<br>where K is the number of nonzero terms in the polynomial, N​i​​ and a​N​i​​​​ (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10，0≤N​K​​&lt;⋯&lt;N​2​​&lt;N​1​​≤1000.</p>
+<p>Output Specification:<br>For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
+<p>Sample Input:<br>2 1 2.4 0 3.2<br>2 2 1.5 1 0.5</p>
+<p>Sample Output:<br>3 2 1.5 1 2.9 0 3.2</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; </span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">typedef struct node&#123;</span><br><span class="line">	int expo;</span><br><span class="line">	double coef;</span><br><span class="line">	struct node *link;</span><br><span class="line">&#125;Poly;</span><br><span class="line"></span><br><span class="line">Poly* CREATE(int n);</span><br><span class="line">Poly* ADD(Poly *A,Poly *B);</span><br><span class="line">void PRINT(Poly *p);</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	int n1,n2,n3&#x3D;0;</span><br><span class="line">	Poly *A,*B;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n1);</span><br><span class="line">	A&#x3D;CREATE(n1);</span><br><span class="line">	&#x2F;&#x2F;PRINT(A);</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n2);</span><br><span class="line">	B&#x3D;CREATE(n2);</span><br><span class="line">	A&#x3D;ADD(A,B);</span><br><span class="line">	Poly *p&#x3D;A;</span><br><span class="line">	while(p!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		n3++;</span><br><span class="line">		p&#x3D;p-&gt;link;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%d&quot;,n3);</span><br><span class="line">	PRINT(A);</span><br><span class="line">	exit(0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Poly* CREATE(int n)</span><br><span class="line">&#123;</span><br><span class="line">	Poly *p,*q,*r;</span><br><span class="line">	p&#x3D;(Poly*)malloc(sizeof(Poly));</span><br><span class="line">	p-&gt;link&#x3D;NULL;</span><br><span class="line">	q&#x3D;p;</span><br><span class="line">	int i;</span><br><span class="line">	for(i&#x3D;0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		r&#x3D;(Poly*)malloc(sizeof(Poly));</span><br><span class="line">		scanf(&quot;%d%lf&quot;,&amp;r-&gt;expo,&amp;r-&gt;coef);</span><br><span class="line">		r-&gt;link&#x3D;NULL;</span><br><span class="line">		q-&gt;link&#x3D;r;		&#x2F;&#x2F;printf(&quot;*&quot;);</span><br><span class="line">		q&#x3D;r;	</span><br><span class="line">	&#125;</span><br><span class="line">	r&#x3D;p;p&#x3D;p-&gt;link;free(r);</span><br><span class="line">	return p;</span><br><span class="line">&#125;</span><br><span class="line">Poly* ADD(Poly *A,Poly *B)</span><br><span class="line">&#123;</span><br><span class="line">	Poly *p,*r1,*r2,*save,*q;</span><br><span class="line">	double tmp;</span><br><span class="line">	if(A-&gt;expo&lt;B-&gt;expo)</span><br><span class="line">	&#123;</span><br><span class="line">		p&#x3D;A;</span><br><span class="line">		A&#x3D;B;</span><br><span class="line">		B&#x3D;p;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;PRINT(A);</span><br><span class="line">	r1&#x3D;A;</span><br><span class="line">	r2&#x3D;B;</span><br><span class="line">	save&#x3D;A;</span><br><span class="line">	while(r1!&#x3D;NULL&amp;&amp;r2!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		if(r1-&gt;expo&gt;r2-&gt;expo)</span><br><span class="line">		&#123;</span><br><span class="line">			save&#x3D;r1;</span><br><span class="line">			r1&#x3D;r1-&gt;link;</span><br><span class="line">			&#x2F;&#x2F;PRINT(A);</span><br><span class="line">		&#125;</span><br><span class="line">		else if(r1-&gt;expo&#x3D;&#x3D;r2-&gt;expo)</span><br><span class="line">		&#123;</span><br><span class="line">			tmp&#x3D;r1-&gt;coef+r2-&gt;coef;</span><br><span class="line">			if(tmp&lt;1e-5)</span><br><span class="line">			&#123;</span><br><span class="line">				if(r1&#x3D;&#x3D;A)</span><br><span class="line">				&#123;</span><br><span class="line">					p&#x3D;A;</span><br><span class="line">					A&#x3D;A-&gt;link;</span><br><span class="line">					free(p);</span><br><span class="line">					r1&#x3D;A;</span><br><span class="line">					&#x2F;&#x2F;save&#x3D;r1;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">				&#123;</span><br><span class="line">					save-&gt;link&#x3D;r1-&gt;link;</span><br><span class="line">					q&#x3D;r1;</span><br><span class="line">					r1&#x3D;save-&gt;link;</span><br><span class="line">					free(q);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				r1-&gt;coef&#x3D;tmp;</span><br><span class="line">				save&#x3D;r1;</span><br><span class="line">				r1&#x3D;r1-&gt;link;</span><br><span class="line">				</span><br><span class="line">				&#x2F;&#x2F;printf(&quot;*&quot;);</span><br><span class="line">				&#x2F;&#x2F;PRINT(A);</span><br><span class="line">			&#125;</span><br><span class="line">			r2&#x3D;r2-&gt;link;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			q&#x3D;r2;</span><br><span class="line">			r2&#x3D;r2-&gt;link;</span><br><span class="line">			if(r1&#x3D;&#x3D;A)</span><br><span class="line">			&#123;</span><br><span class="line">				q-&gt;link&#x3D;A;</span><br><span class="line">				A&#x3D;q;</span><br><span class="line">				r1&#x3D;A;</span><br><span class="line">				save&#x3D;r1;</span><br><span class="line">				r1&#x3D;r1-&gt;link;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				q-&gt;link&#x3D;r1;</span><br><span class="line">				save-&gt;link&#x3D;q;</span><br><span class="line">				save&#x3D;q;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if(r2!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		if(A&#x3D;&#x3D;NULL)</span><br><span class="line">		A&#x3D;r2;</span><br><span class="line">		else	save-&gt;link&#x3D;r2;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return A;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*&#123;</span><br><span class="line">	Poly *p,*q,*r;</span><br><span class="line">	int ex;</span><br><span class="line">	double co,tmp;</span><br><span class="line">	p&#x3D;(Poly*)malloc(sizeof(Poly));</span><br><span class="line">	p-&gt;link&#x3D;NULL;</span><br><span class="line">	q&#x3D;p;</span><br><span class="line">	while(A!&#x3D;NULL&amp;&amp;B!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		r&#x3D;(Poly*)malloc(sizeof(Poly));</span><br><span class="line">		if(A-&gt;expo&gt;B-&gt;expo)</span><br><span class="line">		&#123;</span><br><span class="line">			ex&#x3D;A-&gt;expo;</span><br><span class="line">			co&#x3D;A-&gt;coef;</span><br><span class="line">			A&#x3D;A-&gt;link;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(A-&gt;expo&#x3D;&#x3D;B-&gt;expo)</span><br><span class="line">		&#123;</span><br><span class="line">			tmp&#x3D;A-&gt;coef+B-&gt;coef;</span><br><span class="line">			if(tmp&gt;1e-5)</span><br><span class="line">			&#123;</span><br><span class="line">				ex&#x3D;A-&gt;expo;</span><br><span class="line">				co&#x3D;tmp;</span><br><span class="line">				A&#x3D;A-&gt;link;</span><br><span class="line">				B&#x3D;B-&gt;link;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			ex&#x3D;B-&gt;expo;</span><br><span class="line">			co&#x3D;B-&gt;coef;</span><br><span class="line">			B&#x3D;B-&gt;link;</span><br><span class="line">		&#125;</span><br><span class="line">		r-&gt;expo&#x3D;ex;</span><br><span class="line">		r-&gt;coef&#x3D;co;</span><br><span class="line">		r-&gt;link&#x3D;NULL;</span><br><span class="line">		q-&gt;link&#x3D;r;</span><br><span class="line">		q&#x3D;r;</span><br><span class="line">	&#125;</span><br><span class="line">	if(A!&#x3D;NULL)	q-&gt;link&#x3D;A;</span><br><span class="line">	if(B!&#x3D;NULL) q-&gt;link&#x3D;B;</span><br><span class="line">	r&#x3D;p;</span><br><span class="line">	p&#x3D;p-&gt;link;</span><br><span class="line">	free(r);</span><br><span class="line">	return p;</span><br><span class="line">&#125;*&#x2F;</span><br><span class="line">void PRINT(Poly *p)</span><br><span class="line">&#123;</span><br><span class="line">	while(p!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot; %d %.1f&quot;,p-&gt;expo,p-&gt;coef);</span><br><span class="line">		p&#x3D;p-&gt;link;</span><br><span class="line">	&#125;</span><br><span class="line">	putchar(&#39;\n&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/05/PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/20/%E9%87%91%E5%A4%A7%E5%8A%9B%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-20T10:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/20/%E9%87%91%E5%A4%A7%E5%8A%9B%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">金大力的第一篇文章</a>
-    </h1>
+  
+    <a href="/2020/03/20/%E9%87%91%E5%A4%A7%E5%8A%9B%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">金大力的第一篇文章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/20/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-20T09:50:28.115Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/20/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -285,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
