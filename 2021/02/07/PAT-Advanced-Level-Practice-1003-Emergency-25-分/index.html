@@ -16,7 +16,7 @@
 <meta property="og:description" content="As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the l">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-07T12:27:40.000Z">
-<meta property="article:modified_time" content="2021-02-07T12:35:54.002Z">
+<meta property="article:modified_time" content="2021-02-09T07:08:13.951Z">
 <meta property="article:author" content="金少侠逍遥江湖">
 <meta name="twitter:card" content="summary">
   
@@ -173,81 +173,81 @@
 <p>Sample Input:<br>5 6 0 2<br>1 2 1 5 3<br>0 1 1<br>0 2 2<br>0 3 1<br>1 2 1<br>2 4 1<br>3 4 1</p>
 <p>Sample Output:<br>2 4</p>
 <hr>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span>
 
-#define INFINIT 1000
-int cost[500][500];        //利用邻接矩阵方法存储该带权图
-int SHORTEST_PATH(int s,int e,int nc,int *gather,int rt[]);    //迪杰斯特拉算法 
-int MINDIST(int dist[],int nc,int visited[]);    //寻找尚未确定最短路径的离起始点最近的点
-int SEARCH(int u,int visited[],int nc,int saved[]);
-int main()
-{
-    int nc,nr,start,end;    //分别代表城市数、道路数、起始城市、终点 
-    scanf(&quot;%d%d%d%d&quot;,&amp;nc,&amp;nr,&amp;start,&amp;end);
-    int rt[nc];                //每个城市所拥有的搜救队数
-    int i,j;
-    int c1,c2,weight;
-    int n,max;        //分别代表最短路径数、最多召集的搜救队数  
-    n=max=0;
-    for(i=0;i&lt;nc;i++) 
-        scanf(&quot;%d&quot;,&amp;rt[i]);
+<span class="meta">#<span class="meta-keyword">define</span> INFINIT 1000</span>
+<span class="keyword">int</span> cost[<span class="number">500</span>][<span class="number">500</span>];        <span class="comment">//利用邻接矩阵方法存储该带权图</span>
+<span class="function"><span class="keyword">int</span> <span class="title">SHORTEST_PATH</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> e,<span class="keyword">int</span> nc,<span class="keyword">int</span> *gather,<span class="keyword">int</span> rt[])</span></span>;    <span class="comment">//迪杰斯特拉算法 </span>
+<span class="function"><span class="keyword">int</span> <span class="title">MINDIST</span><span class="params">(<span class="keyword">int</span> dist[],<span class="keyword">int</span> nc,<span class="keyword">int</span> visited[])</span></span>;    <span class="comment">//寻找尚未确定最短路径的离起始点最近的点</span>
+<span class="function"><span class="keyword">int</span> <span class="title">SEARCH</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> visited[],<span class="keyword">int</span> nc,<span class="keyword">int</span> saved[])</span></span>;
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> nc,nr,start,<span class="built_in">end</span>;    <span class="comment">//分别代表城市数、道路数、起始城市、终点 </span>
+    <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;nc,&amp;nr,&amp;start,&amp;<span class="built_in">end</span>);
+    <span class="keyword">int</span> rt[nc];                <span class="comment">//每个城市所拥有的搜救队数</span>
+    <span class="keyword">int</span> i,j;
+    <span class="keyword">int</span> c1,c2,weight;
+    <span class="keyword">int</span> n,<span class="built_in">max</span>;        <span class="comment">//分别代表最短路径数、最多召集的搜救队数  </span>
+    n=<span class="built_in">max</span>=<span class="number">0</span>;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nc;i++) 
+        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;rt[i]);
 
-    for(i=0;i&lt;nc;i++)
-        for(j=0;j&lt;nc;j++)
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nc;i++)
+        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;nc;j++)
         {
-            if(i==j)    cost[i][j]=0;
-            else  cost[i][j]=INFINIT;
+            <span class="keyword">if</span>(i==j)    cost[i][j]=<span class="number">0</span>;
+            <span class="keyword">else</span>  cost[i][j]=INFINIT;
         }
-    for(i=0;i&lt;nr;i++)
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nr;i++)
     {
-        scanf(&quot;%d%d%d&quot;,&amp;c1,&amp;c2,&amp;weight);
+        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;c1,&amp;c2,&amp;weight);
         cost[c1][c2]=weight;
         cost[c2][c1]=weight;
     }
-    n=SHORTEST_PATH(start,end,nc,&amp;max,rt);
-    printf(&quot;%d %d\n&quot;,n,max);
-    return 0;
+    n=SHORTEST_PATH(start,<span class="built_in">end</span>,nc,&amp;<span class="built_in">max</span>,rt);
+    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,n,<span class="built_in">max</span>);
+    <span class="keyword">return</span> <span class="number">0</span>;
 }
-int SHORTEST_PATH(int s,int e,int nc,int *gather,int rt[])
-{
-    int count,u,w,i;
-    int visited[nc],saved[nc];    //标记数组
-    int num[nc];        //计数器
-    int dist[nc];        //到达每一个顶点的最短距离
-    int team[nc];        //到达每一个城市的最短距离的最大救援队数 
+<span class="function"><span class="keyword">int</span> <span class="title">SHORTEST_PATH</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> e,<span class="keyword">int</span> nc,<span class="keyword">int</span> *gather,<span class="keyword">int</span> rt[])</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> count,u,w,i;
+    <span class="keyword">int</span> visited[nc],saved[nc];    <span class="comment">//标记数组</span>
+    <span class="keyword">int</span> num[nc];        <span class="comment">//计数器</span>
+    <span class="keyword">int</span> dist[nc];        <span class="comment">//到达每一个顶点的最短距离</span>
+    <span class="keyword">int</span> team[nc];        <span class="comment">//到达每一个城市的最短距离的最大救援队数 </span>
 
-    for(i=0;i&lt;nc;i++)        //初始化
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nc;i++)        <span class="comment">//初始化</span>
     {
-        visited[i]=0;
-        num[i]=1;
+        visited[i]=<span class="number">0</span>;
+        num[i]=<span class="number">1</span>;
         dist[i]=cost[s][i];
         team[i]=rt[s];
     }
-    visited[s]=1;
-    count=1;
-    num[s]=1;
-    while(count&lt;nc)
+    visited[s]=<span class="number">1</span>;
+    count=<span class="number">1</span>;
+    num[s]=<span class="number">1</span>;
+    <span class="keyword">while</span>(count&lt;nc)
     {
         u=MINDIST(dist,nc,visited);
-        visited[u]=1;
+        visited[u]=<span class="number">1</span>;
         count++;
         team[u]+=rt[u];
-        for(i=0;i&lt;nc;i++)
-            saved[i]=0;
-        while(1)
+        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nc;i++)
+            saved[i]=<span class="number">0</span>;
+        <span class="keyword">while</span>(<span class="number">1</span>)
         {
             w=SEARCH(u,visited,nc,saved);
-            if(w==-1)        break;
-            else
+            <span class="keyword">if</span>(w==<span class="number">-1</span>)        <span class="keyword">break</span>;
+            <span class="keyword">else</span>
             {
-                if((cost[u][w]+dist[u])==dist[w])
+                <span class="keyword">if</span>((cost[u][w]+dist[u])==dist[w])
                 {
                     num[w]+=num[u];
-                    if(team[u]&gt;team[w])
+                    <span class="keyword">if</span>(team[u]&gt;team[w])
                     team[w]=team[u];
                 }
-                else if((cost[u][w]+dist[u])&lt;dist[w])
+                <span class="keyword">else</span> <span class="keyword">if</span>((cost[u][w]+dist[u])&lt;dist[w])
                 {
                     dist[w]=cost[u][w]+dist[u];
                     num[w]=num[u];
@@ -257,37 +257,38 @@ int SHORTEST_PATH(int s,int e,int nc,int *gather,int rt[])
         }
     }
     (*gather)=team[e];
-    return num[e];
+    <span class="keyword">return</span> num[e];
 }
 
-int MINDIST(int dist[],int nc,int visited[])
-{
-    int min=INFINIT,i,j=-1;
-    for(i=0;i&lt;nc;i++)
+<span class="function"><span class="keyword">int</span> <span class="title">MINDIST</span><span class="params">(<span class="keyword">int</span> dist[],<span class="keyword">int</span> nc,<span class="keyword">int</span> visited[])</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> <span class="built_in">min</span>=INFINIT,i,j=<span class="number">-1</span>;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nc;i++)
     {
-        if(dist[i]&lt;min&amp;&amp;visited[i]==0)
+        <span class="keyword">if</span>(dist[i]&lt;<span class="built_in">min</span>&amp;&amp;visited[i]==<span class="number">0</span>)
         {
-            min=dist[i];
+            <span class="built_in">min</span>=dist[i];
             j=i;
         }
     }
-    return j;
+    <span class="keyword">return</span> j;
 }
 
-int SEARCH(int u,int visited[],int nc,int saved[])
-{
-    int i;
-    for(i=0;i&lt;nc;i++)
+<span class="function"><span class="keyword">int</span> <span class="title">SEARCH</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> visited[],<span class="keyword">int</span> nc,<span class="keyword">int</span> saved[])</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> i;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nc;i++)
     {
-        if(cost[u][i]!=0&amp;&amp;cost[u][i]!=INFINIT&amp;&amp;visited[i]==0&amp;&amp;saved[i]==0)
+        <span class="keyword">if</span>(cost[u][i]!=<span class="number">0</span>&amp;&amp;cost[u][i]!=INFINIT&amp;&amp;visited[i]==<span class="number">0</span>&amp;&amp;saved[i]==<span class="number">0</span>)
         {
-            saved[i]=1;
-            return i;
+            saved[i]=<span class="number">1</span>;
+            <span class="keyword">return</span> i;
         }
 
     }
-    return -1;
+    <span class="keyword">return</span> <span class="number">-1</span>;
 }</code></pre>
+
       
 
       
