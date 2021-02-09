@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>PAT (Advanced Level) Practice | 1003 Emergency (25 分) | 大力的小窝</title>
+  <title>PAT (Advanced Level) Practice | 1004 Counting Leaves (30 分) | 大力的小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the l">
+  <meta name="description" content="A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child. Input Specification:Each input file contains one test case. Each case starts wi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT (Advanced Level) Practice | 1003 Emergency (25 分)">
-<meta property="og:url" content="http://yoursite.com/2021/02/07/PAT-Advanced-Level-Practice-1003-Emergency-25-%E5%88%86/index.html">
+<meta property="og:title" content="PAT (Advanced Level) Practice | 1004 Counting Leaves (30 分)">
+<meta property="og:url" content="http://yoursite.com/2021/02/09/PAT-Advanced-Level-Practice-1004-Counting-Leaves-30-%E5%88%86/index.html">
 <meta property="og:site_name" content="大力的小窝">
-<meta property="og:description" content="As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the l">
+<meta property="og:description" content="A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child. Input Specification:Each input file contains one test case. Each case starts wi">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-07T12:27:40.000Z">
-<meta property="article:modified_time" content="2021-02-07T12:35:54.002Z">
+<meta property="article:published_time" content="2021-02-09T05:06:29.000Z">
+<meta property="article:modified_time" content="2021-02-09T05:21:57.327Z">
 <meta property="article:author" content="金少侠逍遥江湖">
 <meta name="twitter:card" content="summary">
   
@@ -146,148 +146,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-PAT-Advanced-Level-Practice-1003-Emergency-25-分" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-PAT-Advanced-Level-Practice-1004-Counting-Leaves-30-分" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      PAT (Advanced Level) Practice | 1003 Emergency (25 分)
+      PAT (Advanced Level) Practice | 1004 Counting Leaves (30 分)
     </h1>
   
 
         
-        <a href="/2021/02/07/PAT-Advanced-Level-Practice-1003-Emergency-25-%E5%88%86/" class="archive-article-date">
-  	<time datetime="2021-02-07T12:27:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-07</time>
+        <a href="/2021/02/09/PAT-Advanced-Level-Practice-1004-Counting-Leaves-30-%E5%88%86/" class="archive-article-date">
+  	<time datetime="2021-02-09T05:06:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
-<p>Input Specification:<br>Each input file contains one test case. For each test case, the first line contains 4 positive integers: N (≤500) - the number of cities (and the cities are numbered from 0 to N−1), M - the number of roads, C​1​​ and C​2​​ - the cities that you are currently in and that you must save, respectively. The next line contains N integers, where the i-th integer is the number of rescue teams in the i-th city. Then M lines follow, each describes a road with three integers c​1​​, c​2​​ and L, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from C​1​​ to C​2​​.</p>
-<p>Output Specification:<br>For each test case, print in one line two numbers: the number of different shortest paths between C​1​​ and C​2​​, and the maximum amount of rescue teams you can possibly gather. All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+        <p>A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.</p>
+<p>Input Specification:<br>Each input file contains one test case. Each case starts with a line containing 0&lt;N&lt;100, the number of nodes in a tree, and M (&lt;N), the number of non-leaf nodes. Then M lines follow, each in the format:<br><code>ID K ID[1] ID[2] ... ID[K]</code><br>where <code>ID</code> is a two-digit number representing a given non-leaf node, <code>K</code> is the number of its children, followed by a sequence of two-digit <code>ID</code>‘s of its children. For the sake of simplicity, let us fix the root ID to be <code>01</code>.<br>The input ends with N being 0. That case must NOT be processed.</p>
+<p>Output Specification:<br>For each test case, you are supposed to count those family members who have no child for every seniority level starting from the root. The numbers must be printed in a line, separated by a space, and there must be no extra space at the end of each line.<br>The sample case represents a tree with only 2 nodes, where <code>01</code> is the root and <code>02</code> is its only child. Hence on the root <code>01</code> level, there is <code>0</code> leaf node; and on the next level, there is <code>1</code> leaf node. Then we should output <code>01</code> in a line.</p>
 <a id="more"></a>
-<p>Sample Input:<br>5 6 0 2<br>1 2 1 5 3<br>0 1 1<br>0 2 2<br>0 3 1<br>1 2 1<br>2 4 1<br>3 4 1</p>
-<p>Sample Output:<br>2 4</p>
+<p>Sample Input:<br><code>2 1</code><br><code>01 1 02</code></p>
+<p>Sample Output:<br><code>0 1</code></p>
 <hr>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> level;		<span class="comment">//结点所在层 </span></span><br><span class="line">	<span class="keyword">int</span> flag;		<span class="comment">//是否有孩子 </span></span><br><span class="line">	<span class="keyword">int</span> father;			<span class="comment">//双亲是谁 </span></span><br><span class="line">&#125;Node;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Level_Travel</span><span class="params">(Node T[],<span class="keyword">int</span> N)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N,M,i,j,n,cn;</span><br><span class="line">	<span class="keyword">char</span> c[<span class="number">2</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;M);</span><br><span class="line">	Node T[N];</span><br><span class="line">	<span class="keyword">if</span>(N&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)		<span class="comment">//初始化 </span></span><br><span class="line">		&#123;</span><br><span class="line">			T[i].level=<span class="number">0</span>;</span><br><span class="line">			T[i].flag=<span class="number">0</span>;</span><br><span class="line">			T[i].father=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;M;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>,c);</span><br><span class="line">			n=(c[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+c[<span class="number">1</span>]-<span class="string">'0'</span><span class="number">-1</span>;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;cn);</span><br><span class="line">			<span class="keyword">if</span>(cn&gt;<span class="number">0</span>)	T[n].flag=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;cn;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">scanf</span>(<span class="string">"%s"</span>,c);</span><br><span class="line">				T[(c[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+c[<span class="number">1</span>]-<span class="string">'0'</span><span class="number">-1</span>].father=n;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;N;i++)</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;N;j++)</span><br><span class="line">			<span class="keyword">if</span>(T[i].father==j)</span><br><span class="line">			T[i].level=T[j].level+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		Level_Travel(T,N);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Level_Travel</span><span class="params">(Node T[],<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,save[N],<span class="built_in">max</span>=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">	save[i]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(T[i].flag==<span class="number">0</span>)</span><br><span class="line">			save[T[i].level]++;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">max</span>&lt;T[i].level)</span><br><span class="line">		<span class="built_in">max</span>=T[i].level;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,save[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="built_in">max</span>;i++)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">" %d"</span>,save[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-#define INFINIT 1000
-int cost[500][500];        //利用邻接矩阵方法存储该带权图
-int SHORTEST_PATH(int s,int e,int nc,int *gather,int rt[]);    //迪杰斯特拉算法 
-int MINDIST(int dist[],int nc,int visited[]);    //寻找尚未确定最短路径的离起始点最近的点
-int SEARCH(int u,int visited[],int nc,int saved[]);
-int main()
-{
-    int nc,nr,start,end;    //分别代表城市数、道路数、起始城市、终点 
-    scanf(&quot;%d%d%d%d&quot;,&amp;nc,&amp;nr,&amp;start,&amp;end);
-    int rt[nc];                //每个城市所拥有的搜救队数
-    int i,j;
-    int c1,c2,weight;
-    int n,max;        //分别代表最短路径数、最多召集的搜救队数  
-    n=max=0;
-    for(i=0;i&lt;nc;i++) 
-        scanf(&quot;%d&quot;,&amp;rt[i]);
 
-    for(i=0;i&lt;nc;i++)
-        for(j=0;j&lt;nc;j++)
-        {
-            if(i==j)    cost[i][j]=0;
-            else  cost[i][j]=INFINIT;
-        }
-    for(i=0;i&lt;nr;i++)
-    {
-        scanf(&quot;%d%d%d&quot;,&amp;c1,&amp;c2,&amp;weight);
-        cost[c1][c2]=weight;
-        cost[c2][c1]=weight;
-    }
-    n=SHORTEST_PATH(start,end,nc,&amp;max,rt);
-    printf(&quot;%d %d\n&quot;,n,max);
-    return 0;
-}
-int SHORTEST_PATH(int s,int e,int nc,int *gather,int rt[])
-{
-    int count,u,w,i;
-    int visited[nc],saved[nc];    //标记数组
-    int num[nc];        //计数器
-    int dist[nc];        //到达每一个顶点的最短距离
-    int team[nc];        //到达每一个城市的最短距离的最大救援队数 
 
-    for(i=0;i&lt;nc;i++)        //初始化
-    {
-        visited[i]=0;
-        num[i]=1;
-        dist[i]=cost[s][i];
-        team[i]=rt[s];
-    }
-    visited[s]=1;
-    count=1;
-    num[s]=1;
-    while(count&lt;nc)
-    {
-        u=MINDIST(dist,nc,visited);
-        visited[u]=1;
-        count++;
-        team[u]+=rt[u];
-        for(i=0;i&lt;nc;i++)
-            saved[i]=0;
-        while(1)
-        {
-            w=SEARCH(u,visited,nc,saved);
-            if(w==-1)        break;
-            else
-            {
-                if((cost[u][w]+dist[u])==dist[w])
-                {
-                    num[w]+=num[u];
-                    if(team[u]&gt;team[w])
-                    team[w]=team[u];
-                }
-                else if((cost[u][w]+dist[u])&lt;dist[w])
-                {
-                    dist[w]=cost[u][w]+dist[u];
-                    num[w]=num[u];
-                    team[w]=team[u];
-                }
-            }
-        }
-    }
-    (*gather)=team[e];
-    return num[e];
-}
-
-int MINDIST(int dist[],int nc,int visited[])
-{
-    int min=INFINIT,i,j=-1;
-    for(i=0;i&lt;nc;i++)
-    {
-        if(dist[i]&lt;min&amp;&amp;visited[i]==0)
-        {
-            min=dist[i];
-            j=i;
-        }
-    }
-    return j;
-}
-
-int SEARCH(int u,int visited[],int nc,int saved[])
-{
-    int i;
-    for(i=0;i&lt;nc;i++)
-    {
-        if(cost[u][i]!=0&amp;&amp;cost[u][i]!=INFINIT&amp;&amp;visited[i]==0&amp;&amp;saved[i]==0)
-        {
-            saved[i]=1;
-            return i;
-        }
-
-    }
-    return -1;
-}</code></pre>
       
 
       
@@ -366,7 +255,7 @@ int SEARCH(int u,int visited[],int nc,int saved[])
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/07/PAT-Advanced-Level-Practice-1003-Emergency-25-%E5%88%86/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/09/PAT-Advanced-Level-Practice-1004-Counting-Leaves-30-%E5%88%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -380,18 +269,18 @@ int SEARCH(int u,int visited[],int nc,int saved[])
   
 <nav id="article-nav">
   
-    <a href="/2021/02/09/PAT-Advanced-Level-Practice-1004-Counting-Leaves-30-%E5%88%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/09/PAT-Advanced-Level-Practice-1005-Spell-It-Right-20-%E5%88%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          PAT (Advanced Level) Practice | 1004 Counting Leaves (30 分)
+          PAT (Advanced Level) Practice | 1005 Spell It Right (20 分)
         
       </div>
     </a>
   
   
-    <a href="/2021/02/05/PAT-Advanced-Level-Practice-1002-A-B-for-Polynomials/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PAT (Advanced Level) Practice 1002 A+B for Polynomials</div>
+    <a href="/2021/02/07/PAT-Advanced-Level-Practice-1003-Emergency-25-%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PAT (Advanced Level) Practice | 1003 Emergency (25 分)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -430,7 +319,7 @@ int SEARCH(int u,int visited[],int nc,int saved[])
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2021/02/07/PAT-Advanced-Level-Practice-1003-Emergency-25-%E5%88%86/",
+  id: "http://yoursite.com/2021/02/09/PAT-Advanced-Level-Practice-1004-Counting-Leaves-30-%E5%88%86/",
   owner: 'jinxuelian1999',
   repo: 'jinxuelian1999.github.io',
   oauth: {
