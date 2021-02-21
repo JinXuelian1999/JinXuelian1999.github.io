@@ -16,8 +16,9 @@
 <meta property="og:description" content="Given a pair of positive integers, for example, 6 and 110, can this equation 6 &#x3D; 110 be true? The answer is yes, if 6 is a decimal number and 110 is a binary number. Now for any pair of positive integ">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-14T08:08:53.000Z">
-<meta property="article:modified_time" content="2021-02-15T06:34:04.295Z">
+<meta property="article:modified_time" content="2021-02-21T09:44:43.558Z">
 <meta property="article:author" content="金少侠逍遥江湖">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="大力的小窝" type="application/atom+xml">
@@ -180,7 +181,7 @@
 <p><strong>Sample Output 2:</strong></p>
 <p>Impossible</p>
 <hr>
-<p>  非常令人蛋疼的一道题，最开始我用的是暴力算法，每次都是从这个数最大的一位数加一开始递增试验，我一开始以为最多只有36进制，谁知有好几个测试点没过去，后来我上限改成了100，还是有几个测试点没过去，再后来我设定如若两个数完全一致，就直接输出radix，还是有一个测试点7过不去。我到CSDN一查才知道，测试点7只有用二分法做才能过，我看了一些大佬的代码，又重头再来，重写代码，才终于过了。这道题我花了大概四个小时，ε=(´ο｀*)))唉，希望我的代码可以给大家一些启示，少走一些弯路，多节省一点时间吧。</p>
+<p>  有些坑的一道题，最开始我用的是暴力算法，每次都是从这个数最大的一位数加一开始递增试验，我一开始以为最多只有36进制，谁知有好几个测试点没过去，后来我上限改成了100，还是有几个测试点没过去，再后来我设定如若两个数完全一致，就直接输出radix，还是有一个测试点7过不去。我到CSDN一查才知道，测试点7只有用二分法做才能过，我看了一些大佬的代码，又重头再来，重写代码，才终于过了。这道题我花了大概四个小时，ε=(´ο｀*)))唉，希望我的代码可以给大家一些启示，少走一些弯路，多节省一点时间吧。</p>
 <a id="more"></a>
 <hr>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 11</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">compare</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=b) <span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N[<span class="number">2</span>][M],tag,radix[<span class="number">2</span>],i,j,length[<span class="number">2</span>],flag=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n=<span class="number">0</span>,left,right,mid,<span class="built_in">min</span>,<span class="built_in">max</span>=<span class="number">0</span>,testcase;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		j=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>((c=getchar())!=<span class="string">' '</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)</span><br><span class="line">			N[i][j++]=c-<span class="string">'0'</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			N[i][j++]=c-<span class="string">'a'</span>+<span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		length[i]=j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;tag);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;radix[tag<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length[tag<span class="number">-1</span>];i++)</span><br><span class="line">	n=n*radix[tag<span class="number">-1</span>]+N[tag<span class="number">-1</span>][i];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> tag2=tag%<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length[tag2];i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(N[tag2][i]&gt;<span class="built_in">max</span>)</span><br><span class="line">		<span class="built_in">max</span>=N[tag2][i];</span><br><span class="line">	&#125;</span><br><span class="line">	left=<span class="built_in">max</span>+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(left&lt;<span class="number">2</span>) left=<span class="number">2</span>;</span><br><span class="line">	right=compare(left,n);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">	&#123;</span><br><span class="line">		testcase=<span class="number">0</span>;</span><br><span class="line">		mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length[tag2];i++)</span><br><span class="line">		&#123;</span><br><span class="line">			</span><br><span class="line">			testcase=testcase*mid+N[tag2][i];</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">if</span>(testcase==n)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">min</span>=mid;</span><br><span class="line">			right=mid<span class="number">-1</span>;</span><br><span class="line">			flag=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(testcase&gt;n||testcase&lt;<span class="number">0</span>) right=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(testcase&lt;n) left=mid+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag==<span class="number">0</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Impossible\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,<span class="built_in">min</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -213,7 +214,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">刷题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/PAT-Advanced-Level-Practice//" class="article-tag-list-link color5">PAT (Advanced Level) Practice</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -431,7 +454,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PAT甲级</a>
+                <a href="javascript:void(0)" class="js-tag color3">刷题</a>
               </li>
             
             <div class="clearfix"></div>
